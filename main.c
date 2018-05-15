@@ -4,7 +4,7 @@
 
 #define HEIGHT 8
 #define WIDTH 8
-#define M_AMOUNT 8
+#define M_AMOUNT 10
 
 #define MASK 10
 
