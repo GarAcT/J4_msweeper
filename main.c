@@ -36,7 +36,7 @@ void init(int *stage)
 {
   int i;
 
-	srand((unsigned)time(NULL));
+  srand((unsigned)time(NULL));
 
   for(i = 0; i < HEIGHT*WIDTH; i++){
     stage[i] = MASK;
