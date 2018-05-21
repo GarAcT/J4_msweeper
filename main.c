@@ -90,12 +90,9 @@ int search_M(int *stage, int x, int y)
   int i,j;
   int ret = 0;
 
-  --x;
-  --y;
-
-  for(i=0; i<3; i++){
+  for(i=-1; i<=1; i++){
     if(y+i < 0 || y+i >= HEIGHT) continue;
-    for(j=0; j<3; j++){
+    for(j=-1; j<=1; j++){
       if(x+j < 0 || x+j >= WIDTH) continue;
       ret += stage[WIDTH*(y+i) + x+j] % MASK;
     }
