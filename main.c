@@ -103,7 +103,13 @@ int search_M(int *stage, int x, int y)
 
 int open_cell(int *stage, int x, int y)
 {
-  stage[WIDTH*y + x] -= MASK;
+  int pos;
 
-  return stage[WIDTH*y + x];
+  pos = WIDTH*y + x;
+
+  if(stage[pos] >= MASK){
+    stage[pos] -= MASK;
+  }
+
+  return stage[pos];
 }
