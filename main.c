@@ -14,6 +14,7 @@ void show_map(int *stage);
 
 int  search_M(int *stage, int x, int y);
 int  open_cell(int *stage, int x, int y);
+int  input();
 
 int main(void)
 {
@@ -112,4 +113,14 @@ int open_cell(int *stage, int x, int y)
   }
 
   return stage[pos];
+}
+
+int input()
+{
+  int x, y;
+
+  scanf("%d",&x);
+  scanf("%d",&y);
+
+  return y*WIDTH + x;
 }
