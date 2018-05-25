@@ -20,17 +20,18 @@ int main(void)
 {
   int stage[HEIGHT*WIDTH];
 
-  int i,j;
+  int i;
 
   init(stage);
 
-  for(i = 0; i < HEIGHT; i++){
-    for(j = 0; j < WIDTH; j++){
-      open_cell(stage, j, i);
-    }
+  while(1){
+    i = input();
+
+    open_cell(stage, i%WIDTH, i/WIDTH);
+
+    show_map(stage);
   }
 
-  show_map(stage);
 }
 
 void init(int *stage)
