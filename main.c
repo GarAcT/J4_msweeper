@@ -27,7 +27,10 @@ int main(void)
   while(1){
     i = input();
 
-    open_cell(stage, i);
+    if(open_cell(stage, i)){
+      show_map(stage);
+      break;
+    }
 
     show_map(stage);
   }
