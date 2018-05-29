@@ -11,6 +11,7 @@
 void init(int *stage);
 void shuffle(int *stage);
 void show_map(int *stage);
+void game_over(void);
 
 int  search_M(int *stage, int pos);
 int  open_cell(int *stage, int pos);
@@ -21,6 +22,7 @@ int main(void)
   int stage[HEIGHT*WIDTH];
 
   int i;
+  int over_flag = 0;
 
   init(stage);
 
@@ -29,11 +31,15 @@ int main(void)
 
     if(open_cell(stage, i)){
       show_map(stage);
+      over_flag = 1;
       break;
     }
 
     show_map(stage);
   }
+
+  if(over_flag)
+    game_over();
 
 }
 
@@ -88,6 +94,13 @@ void show_map(int *stage)
   }
 
   if(i%WIDTH == 0) puts("");
+}
+
+void game_over(void)
+{
+  puts("===================");
+  puts("|    GAME OVER    |");
+  puts("===================");
 }
 
 int search_M(int *stage, int pos)
